@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  Basic Search Funcionality
-Library  SeleniumLibrary
+Resource  ../../Resources/CommonFunctionality.robot
+Resource  ../../Resources/eBay_UserDefinedKeywords.robot
 
 *** Variables ***
 
