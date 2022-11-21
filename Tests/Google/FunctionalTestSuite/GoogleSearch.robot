@@ -5,6 +5,6 @@ Library  SeleniumLibrary
 
 *** Test Cases ***
 This is a sample test case
-    OpenBrowser  https://www.google.com  chrome
-    CloseBrowser
+    Open Browser  https://www.google.com  chrome
+    Close Browser
 *** Keywords ***
