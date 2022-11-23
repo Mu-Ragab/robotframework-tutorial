@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Variables  ../WebElements.py
 
 *** Variables ***
 #${search_text}  robot
@@ -9,8 +10,8 @@ Library  SeleniumLibrary
 *** Keywords ***
 Input Search Text and Click Search
     [Arguments]  ${search_text}
-    Input Text  xpath://*[@id="gh-ac"]  ${search_text}
-    Press Keys  xpath://*[@id="gh-btn"]  [Return]
+    Input Text  ${HomePageSearchTextBox}  ${search_text}
+    Press Keys  ${HomePageSearchButton}  [Return]
 
 Click on Advanced Search Link
-    Click Element  //*[@id="gh-as-a"]
+    Click Element  ${HomePageAdvancedSearchLink}
