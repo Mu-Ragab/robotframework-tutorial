@@ -1,99 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20221127 16:07:37.683" rpa="false" schemaversion="3">
-<suite id="s1" name="WorkingWithBrowsers" source="/Users/muhammad.ibrahim/PycharmProjects/RobotFrameworkTutorial/Tests/Practices/WorkingWithBrowsers.robot">
-<test id="s1-t1" name="This is a test case for practicing browser operation keywords" line="6">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20221128 13:50:29.332" rpa="false" schemaversion="3">
+<suite id="s1" name="WorkingWithWindows" source="/Users/muhammad.ibrahim/PycharmProjects/RobotFrameworkTutorial/Tests/Practices/WorkingWithWindows.robot">
+<test id="s1-t1" name="This is a test case for practicing window keywords" line="7">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https:www.google.com</arg>
+<arg>https://salesforce.com</arg>
 <arg>chrome</arg>
 <arg>alias=ChromeRCV</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221127 16:07:37.829" level="INFO">Opening browser 'chrome' to base url 'https:www.google.com'.</msg>
-<status status="PASS" starttime="20221127 16:07:37.829" endtime="20221127 16:07:40.642"/>
+<msg timestamp="20221128 13:50:29.534" level="INFO">Opening browser 'chrome' to base url 'https://salesforce.com'.</msg>
+<status status="PASS" starttime="20221128 13:50:29.533" endtime="20221128 13:50:35.654"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221127 16:07:40.642" endtime="20221127 16:07:40.773"/>
+<status status="PASS" starttime="20221128 13:50:35.655" endtime="20221128 13:50:35.827"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>Firefox</arg>
-<arg>alias=RCVFF</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221127 16:07:40.774" level="INFO">Opening browser 'Firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20221127 16:07:40.775" level="INFO">Firefox driver log is always forced to to: /Users/muhammad.ibrahim/PycharmProjects/RobotFrameworkTutorial/results/geckodriver-7.log</msg>
-<status status="PASS" starttime="20221127 16:07:40.773" endtime="20221127 16:07:43.650"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:header &gt; div &gt; div.c360-nav__wrapper &gt; nav.utility-nav &gt; div &gt; hgf-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20221128 13:50:41.691" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221128 13:50:41.692" level="FAIL">Element 'css:header &gt; div &gt; div.c360-nav__wrapper &gt; nav.utility-nav &gt; div &gt; hgf-button' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20221128 13:50:35.828" endtime="20221128 13:50:41.696"/>
 </kw>
-<kw name="Get Browser Ids" library="SeleniumLibrary">
-<var>@{browser_id}</var>
-<doc>Returns index of all active browser as list.</doc>
-<msg timestamp="20221127 16:07:43.651" level="INFO">@{browser_id} = [ 1 | 2 ]</msg>
-<status status="PASS" starttime="20221127 16:07:43.650" endtime="20221127 16:07:43.651"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:header &gt; div &gt; div.c360-nav__wrapper &gt; nav.utility-nav &gt; div &gt; hgf-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.696" endtime="20221128 13:50:41.696"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${browser_id}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221127 16:07:43.651" level="INFO">[1, 2]</msg>
-<status status="PASS" starttime="20221127 16:07:43.651" endtime="20221127 16:07:43.651"/>
-</kw>
-<kw name="Get Browser Aliases" library="SeleniumLibrary">
-<var>&amp;{alias}</var>
-<doc>Returns aliases of all active browser that has an alias as NormalizedDict.
-The dictionary contains the aliases as keys and the index as value.
-This can be accessed as dictionary ``${aliases.key}`` or as list ``@{aliases}[0]``.</doc>
-<msg timestamp="20221127 16:07:43.652" level="INFO">&amp;{alias} = { ChromeRCV=1 | RCVFF=2 }</msg>
-<status status="PASS" starttime="20221127 16:07:43.651" endtime="20221127 16:07:43.652"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${alias}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221127 16:07:43.652" level="INFO">{'ChromeRCV': 1, 'RCVFF': 2}</msg>
-<status status="PASS" starttime="20221127 16:07:43.652" endtime="20221127 16:07:43.652"/>
-</kw>
-<kw name="Switch Browser" library="SeleniumLibrary">
-<arg>1</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" starttime="20221127 16:07:43.652" endtime="20221127 16:07:43.652"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@class='gLFyf']</arg>
-<arg>test text</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221127 16:07:43.653" level="INFO">Typing text 'test text' into text field 'xpath://input[@class='gLFyf']'.</msg>
-<status status="PASS" starttime="20221127 16:07:43.652" endtime="20221127 16:07:43.765"/>
+<kw name="Get Window Hnadles">
+<var>@{WindowHandles}</var>
+<status status="NOT RUN" starttime="20221128 13:50:41.699" endtime="20221128 13:50:41.699"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>4s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221127 16:07:47.768" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20221127 16:07:43.766" endtime="20221127 16:07:47.769"/>
+<status status="NOT RUN" starttime="20221128 13:50:41.699" endtime="20221128 13:50:41.699"/>
 </kw>
-<kw name="Switch Browser" library="SeleniumLibrary">
-<arg>${alias.RCVFF}</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" starttime="20221127 16:07:47.769" endtime="20221127 16:07:47.770"/>
+<kw name="Get Window Identifiers" library="SeleniumLibrary">
+<var>@{WindowIdentifier}</var>
+<doc>Returns and logs id attributes of all windows of the selected browser.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.699" endtime="20221128 13:50:41.699"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>http://salesforce.com</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20221127 16:07:47.771" level="INFO">Opening url 'http://salesforce.com'</msg>
-<status status="PASS" starttime="20221127 16:07:47.771" endtime="20221127 16:07:56.251"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.699" endtime="20221128 13:50:41.699"/>
 </kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20221127 16:07:56.251" endtime="20221127 16:07:56.875"/>
+<kw name="Get Window Names" library="SeleniumLibrary">
+<var>@{WindowNames}</var>
+<doc>Returns and logs names of all windows of the selected browser.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.699" endtime="20221128 13:50:41.700"/>
 </kw>
-<status status="PASS" starttime="20221127 16:07:37.828" endtime="20221127 16:07:56.875"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.700" endtime="20221128 13:50:41.700"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>@{WindowTitles}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.700" endtime="20221128 13:50:41.700"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.700" endtime="20221128 13:50:41.700"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>100</arg>
+<arg>200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.700" endtime="20221128 13:50:41.700"/>
+</kw>
+<kw name="${x} ${y}=">
+<arg>Get Window Position</arg>
+<status status="NOT RUN" starttime="20221128 13:50:41.703" endtime="20221128 13:50:41.703"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${x}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.703" endtime="20221128 13:50:41.703"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${y}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.703" endtime="20221128 13:50:41.703"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.703" endtime="20221128 13:50:41.703"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>800</arg>
+<arg>600</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.703" endtime="20221128 13:50:41.703"/>
+</kw>
+<kw name="${width} ${height}=">
+<arg>Get Window Size</arg>
+<status status="NOT RUN" starttime="20221128 13:50:41.706" endtime="20221128 13:50:41.706"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${width}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.706" endtime="20221128 13:50:41.706"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${height}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.706" endtime="20221128 13:50:41.706"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>@{WindowHandles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{WindowHandles}[1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>@{WindowHandles}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="NOT RUN" starttime="20221128 13:50:41.707" endtime="20221128 13:50:41.707"/>
+</kw>
+<status status="FAIL" starttime="20221128 13:50:29.533" endtime="20221128 13:50:41.708">Element 'css:header &gt; div &gt; div.c360-nav__wrapper &gt; nav.utility-nav &gt; div &gt; hgf-button' not visible after 5 seconds.</status>
 </test>
-<status status="PASS" starttime="20221127 16:07:37.684" endtime="20221127 16:07:56.876"/>
+<status status="FAIL" starttime="20221128 13:50:29.333" endtime="20221128 13:50:41.709"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="WorkingWithBrowsers">WorkingWithBrowsers</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="WorkingWithWindows">WorkingWithWindows</stat>
 </suite>
 </statistics>
 <errors>

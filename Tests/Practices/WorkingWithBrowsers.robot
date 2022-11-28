@@ -5,7 +5,7 @@ Library  SeleniumLibrary
 
 *** Test Cases ***
 This is a test case for practicing browser operation keywords
-    Open Browser  https:www.google.com  chrome  alias=ChromeRCV
+    Open Browser  https://www.google.com  chrome  alias=ChromeRCV
     Maximize Browser Window
     Open Browser  about:blank  Firefox  alias=RCVFF
     @{browser_id}  Get Browser Ids
