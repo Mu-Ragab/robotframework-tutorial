@@ -1,84 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20221128 20:07:59.178" rpa="false" schemaversion="3">
-<suite id="s1" name="Checkboxes" source="/Users/muhammad.ibrahim/PycharmProjects/RobotFrameworkTutorial/Tests/Practices/Checkboxes.robot">
-<test id="s1-t1" name="This is a test case for practicing checkboxes keywords" line="7">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20221130 19:45:36.165" rpa="false" schemaversion="3">
+<suite id="s1" name="DDT-CSV" source="/Users/muhammad.ibrahim/PycharmProjects/RobotFrameworkTutorial/Tests/Practices/DDT-CSV.robot">
+<kw name="Start TestCase" library="common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.sugarcrm.com/au/request-demo/</arg>
-<arg>chrome</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221128 20:07:59.360" level="INFO">Opening browser 'chrome' to base url 'https://www.sugarcrm.com/au/request-demo/'.</msg>
-<status status="PASS" starttime="20221128 20:07:59.359" endtime="20221128 20:08:07.443"/>
+<msg timestamp="20221130 19:45:36.374" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20221130 19:45:36.374" endtime="20221130 19:45:39.043"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221128 20:08:07.444" endtime="20221128 20:08:07.606"/>
+<status status="PASS" starttime="20221130 19:45:39.043" endtime="20221130 19:45:39.179"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221128 20:08:10.607" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221128 20:08:07.606" endtime="20221128 20:08:10.607"/>
+<msg timestamp="20221130 19:45:41.180" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 19:45:39.179" endtime="20221130 19:45:41.181"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://*[@id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221128 20:08:10.608" level="INFO">Clicking element 'xpath://*[@id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"]'.</msg>
-<status status="PASS" starttime="20221128 20:08:10.607" endtime="20221128 20:08:10.658"/>
+<status status="PASS" starttime="20221130 19:45:36.373" endtime="20221130 19:45:41.181"/>
 </kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<arg>xpath://*[@id="field1"]/div/input</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20221128 20:08:10.658" endtime="20221128 20:08:10.946"/>
+<test id="s1-t1" name="Verify Login Fails with Invalid Creds" line="12">
+<kw name="Invalid Login Scenarios">
+<arg>1</arg>
+<arg>2</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_textbox}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221130 19:45:41.185" level="INFO">Typing text '1' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20221130 19:45:41.184" endtime="20221130 19:45:41.321"/>
 </kw>
-<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi0"]</arg>
-<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<msg timestamp="20221128 20:08:10.974" level="INFO">Current page contains checkbox 'xpath://*[@id="doi0"]'.</msg>
-<status status="PASS" starttime="20221128 20:08:10.947" endtime="20221128 20:08:10.974"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_textbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221130 19:45:41.321" level="INFO">Typing text '2' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221130 19:45:41.321" endtime="20221130 19:45:41.383"/>
 </kw>
-<kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi000"]</arg>
-<doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
-<msg timestamp="20221128 20:08:10.987" level="INFO">Current page does not contain checkbox 'xpath://*[@id="doi000"]'.</msg>
-<status status="PASS" starttime="20221128 20:08:10.974" endtime="20221128 20:08:10.987"/>
-</kw>
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi0"]</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20221128 20:08:10.988" level="INFO">Selecting checkbox 'xpath://*[@id="doi0"]'.</msg>
-<status status="PASS" starttime="20221128 20:08:10.988" endtime="20221128 20:08:11.052"/>
-</kw>
-<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi0"]</arg>
-<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<msg timestamp="20221128 20:08:11.053" level="INFO">Verifying checkbox 'xpath://*[@id="doi0"]' is selected.</msg>
-<status status="PASS" starttime="20221128 20:08:11.053" endtime="20221128 20:08:11.074"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221130 19:45:41.383" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221130 19:45:41.383" endtime="20221130 19:45:41.450"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>4s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221128 20:08:15.075" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20221128 20:08:11.074" endtime="20221128 20:08:15.076"/>
+<msg timestamp="20221130 19:45:43.451" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 19:45:41.450" endtime="20221130 19:45:43.451"/>
 </kw>
-<kw name="Unselect Checkbox" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi0"]</arg>
-<doc>Removes the selection of checkbox identified by ``locator``.</doc>
-<msg timestamp="20221128 20:08:15.077" level="INFO">Unselecting checkbox 'xpath://*[@id="doi0"]'.</msg>
-<status status="PASS" starttime="20221128 20:08:15.076" endtime="20221128 20:08:15.118"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${text_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20221130 19:45:43.471" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20221130 19:45:43.451" endtime="20221130 19:45:43.471"/>
 </kw>
-<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
-<arg>xpath://*[@id="doi0"]</arg>
-<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<msg timestamp="20221128 20:08:15.119" level="INFO">Verifying checkbox 'xpath://*[@id="doi0"]' is not selected.</msg>
-<status status="PASS" starttime="20221128 20:08:15.118" endtime="20221128 20:08:15.136"/>
+<status status="PASS" starttime="20221130 19:45:41.184" endtime="20221130 19:45:43.471"/>
 </kw>
+<status status="PASS" starttime="20221130 19:45:41.181" endtime="20221130 19:45:43.472"/>
+</test>
+<kw name="Finish TestCase" library="common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221128 20:08:15.136" endtime="20221128 20:08:15.266"/>
+<status status="PASS" starttime="20221130 19:45:43.473" endtime="20221130 19:45:43.592"/>
 </kw>
-<status status="PASS" starttime="20221128 20:07:59.359" endtime="20221128 20:08:15.266"/>
-</test>
-<status status="PASS" starttime="20221128 20:07:59.179" endtime="20221128 20:08:15.267"/>
+<status status="PASS" starttime="20221130 19:45:43.472" endtime="20221130 19:45:43.592"/>
+</kw>
+<status status="PASS" starttime="20221130 19:45:36.166" endtime="20221130 19:45:43.592"/>
 </suite>
 <statistics>
 <total>
@@ -87,7 +79,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Checkboxes">Checkboxes</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="DDT-CSV">DDT-CSV</stat>
 </suite>
 </statistics>
 <errors>
